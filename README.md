@@ -1,2 +1,2 @@
-# webon
-Another Flask app.
+# WebOn
+Another Flask app for python data objects.
