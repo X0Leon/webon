@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex">
+  <title>WebOn - Data in browser </title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-2.1.0.js'></script> 
+  <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.css">
+      <script type='text/javascript' src="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.js"></script> 
+  <style type='text/css'>
+    .row-index {
+  width: 50px;
+  display: inline-block;
+}
+
+  </style>
+  
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+var data = {{data|tojson}};
+var table = $('#table');
+var button = $('#button');
+var button2 = $('#button2')
+
+$(function() {
+  table.bootstrapTable({
+    data: data
+  });
+  button.click(function() {
+    table.bootstrapTable('scrollTo', 0);
+  });
+  button2.click(function() {
+    table.bootstrapTable('scrollTo', 'bottom');
+  });
+
+});
+
+});//]]> 
+
+</script>
+
+</head>
+<body>
+  
+<div class="container" style="padding: 10px; ">
+
+  <br>
+  <div id="toolbar">
+    <button id="button" class="btn btn-default">scroll Top</button>
+    <button id="button2" class="btn btn-default">scroll Bottom</button>
+  </div>
+  <table id="table"
+         data-toolbar="#toolbar" 
+         data-search="true"
+         data-show-refresh='true'
+         data-toggle="true" 
+         data-show-columns="true" 
+         data-id-field="id"
+         data-striped='true' 
+         data-sort-name='name' 
+         data-sort-order='desc'
+         data-show-pagination-switch="true"
+         data-height="600">
+    <thead>
+      <tr>
+        <th data-field="datetime" data-sortable="true">Datetime</th>
+        <th data-field="open" data-sortable="true" >Open</th>
+        <th data-field="high" data-sortable="true">High</th>
+        <th data-field="low" data-sortable="true">Low</th>
+        <th data-field="close" data-sortable="true">Close</th>
+        <th data-field="volume" data-sortable="true">Volume</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+  
+</body>
+
+</html>
+
