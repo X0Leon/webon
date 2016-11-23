@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+    <script type="text/javascript" src="http://kozea.github.com/pygal.js/javascripts/svg.jquery.js"></script>
+    <script type="text/javascript" src="http://kozea.github.com/pygal.js/javascripts/pygal-tooltips.js"></script>
+    </head>
+    <body>
+    {{ nav.top.render() }}
+        <div id="chart" align="center">
+            <embed type="image/svg+xml" src={{ chart|safe }} style='max-width:800px' />
+        </div>
+    </body>
+</html>

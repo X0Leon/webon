@@ -11,10 +11,9 @@
       <script type='text/javascript' src="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.js"></script> 
   <style type='text/css'>
     .row-index {
-  width: 50px;
-  display: inline-block;
-}
-
+      width: 50px;
+      display: inline-block;
+    }
   </style>
   
 
@@ -43,10 +42,12 @@ $(function() {
 </script>
 
 </head>
+
+
 <body>
   
 <div class="container" style="padding: 10px; ">
-
+{{ nav.top.render() }}
   <br>
   <div id="toolbar">
     <button id="button" class="btn btn-default">scroll Top</button>
